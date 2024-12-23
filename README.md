@@ -42,3 +42,35 @@ module.exports = {
   coverageDirectory: 'coverage',
 };
 ```
+
+```ts
+// src/sum.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+```
+
+```ts
+// __tests__/sum.test.ts
+import { sum } from '../src/sum';
+
+test('1 + 2 = 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+```ts
+{
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "@swc/core": "^1.3.0",
+    "@swc/jest": "^1.3.0"
+  }
+}
+```
